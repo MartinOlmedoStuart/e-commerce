@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+container{
+    width: 100%;
+}
+.logo{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    height: 100px;
+}
+
+.descuentos{
+    background-color: #000000;
+    text-align: center;
+    
+}
+
+p{
+    display: inline;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+li{
+    list-style: none;
+    margin:0 30px;
+}
+a:hover{
+    color: #777;
+    text-decoration: none;
+}
+a{
+    color: black;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.carrito{
+    height: 30px;
+    
+}
+
+.mundo{
+    position: absolute;
+    left: 0;
+    margin-left:5px;
+}
+.mundo img{
+    height: 30px;
+}
+.mundo p{
+    color: black;
+    margin-left: 50px;
+    font-size: 10px;
+}
+
+.carro{
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    font-weight: bold;
+}
