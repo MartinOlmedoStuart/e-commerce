@@ -1,0 +1,38 @@
+.img-producto{
+    height: 580px;
+}
+
+.nombre-precio{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nombre-precio h1,h2{
+    font-size:16px;
+}
+
+.nombre-precio h1{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nombre-precio h2{
+    color: #777;
+}
+.hol{
+    position: relative;
+    z-index: -1;
+}
+
+.img2{
+    height: 580px;
+    width: 387px;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.toggle2{
+    display: none;
+}

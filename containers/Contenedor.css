@@ -1,0 +1,9 @@
+#contenedor{
+    height: 80vh;
+    background-color: grey;
+    padding-top: 20px;
+    display: flex;
+    margin: 0% 2%;
+    width: 96%;
+    justify-content: space-between;
+}
