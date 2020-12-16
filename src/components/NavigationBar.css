@@ -1,27 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
+    /* overflow-x: hidden; */
+    box-sizing: border-box;
 }
-container{
+.container{
+    background-color: white;
     width: 100%;
+    position: fixed;
+    
 }
 .logo{
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.ctr{
+    margin-top: 10px;
+    min-height: 50px;
+}
 #logo{
+    display: block;
     height: 100px;
+    transition: all 0.5s;
+}
+.links{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 20px;
 }
 
 .descuentos{
+    width: 100%;
     background-color: #000000;
-    text-align: center;
-    
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 p{
@@ -30,7 +49,6 @@ p{
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
-    padding: 5px 0;
     font-size: 14px;
 }
 
@@ -57,28 +75,70 @@ a{
     text-decoration: none;
 }
 
+
 .carrito{
-    height: 30px;
-    
+    height: 40px;
+    right: 2%;
+    cursor: pointer;
 }
 
 .mundo{
-    position: absolute;
+    height: 30px;
     left: 0;
-    margin-left:5px;
+    margin-left:2%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .mundo img{
     height: 30px;
 }
 .mundo p{
+    padding-left: 40px;
     color: black;
-    margin-left: 50px;
     font-size: 10px;
 }
 
 .carro{
+    margin-top: 60px;
     position: absolute;
-    right: 0;
-    margin-right: 20px;
+    right: 20px;
     font-weight: bold;
+}
+
+
+#fav{
+    margin-top: 150px;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-left: 2%;
+    border-bottom: 1px solid #777;
+}
+
+.test{
+    transform: translateY(-100px);
+    position: absolute;
+}
+
+.test2{
+    margin-top: 30px;
+}
+
+.orden{
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+}
+
+/* .med, .izq, .der{
+    flex: 1;
+} */
+
+.der{
+    display: flex;
+    justify-content: flex-end;
 }
