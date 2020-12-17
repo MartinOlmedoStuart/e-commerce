@@ -1,5 +1,11 @@
 .img-producto{
     height: 580px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.img-producto:hover{
+    opacity: 0;
 }
 
 .nombre-precio{
@@ -19,20 +25,22 @@
 .nombre-precio h2{
     color: #777;
 }
-.hol{
-    position: relative;
-    z-index: -1;
-}
 
 .img2{
     height: 580px;
     width: 387px;
-    z-index: 1;
+    z-index: -1;
     position: absolute;
-    left: 0;
-    top: 0;
+    opacity: 0.7;
+    
 }
 
 .toggle2{
-    display: none;
+}
+
+.img3{
+    height: 80px;
+    z-index: -1;
+    position: absolute;
+    transform: translate(156px, 270px);
 }

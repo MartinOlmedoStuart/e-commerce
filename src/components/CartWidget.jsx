@@ -6,7 +6,8 @@ import {useState} from "react";
 function CartWidget(){
     const [show, setShow] = useState(false);
     function CambiarSetShow(){
-        setShow(!show);
+       setShow(!show)
+    
     };
     return(
         <>

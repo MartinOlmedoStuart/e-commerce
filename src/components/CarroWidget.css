@@ -8,6 +8,7 @@
     width: 500px;
     background-color:white;
     transition: transform 0.3s ease;
+    z-index: 10;
 }
 
 .toggle{
@@ -165,4 +166,8 @@ form button{
     justify-content: space-around;
     width: 100px;
     height: 34px;
+}
+
+#refresh{
+    height: 20px;
 }
