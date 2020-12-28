@@ -1,14 +1,17 @@
-
+import {Link} from "react-router-dom";
 import CarroWidget from "./CarroWidget";
 import "./Listitems.css";
 
 
-function Listitems({url, precio, nombre}){
+function Listitems({url, precio, nombre, id}){
 
    function addToCart(){
-       alert("Has agregado un item nuevo al carro");
+       
    };
-    
+
+   const linkk="/item/"+id;
+   
+   
     return(
         <>
      
@@ -17,7 +20,8 @@ function Listitems({url, precio, nombre}){
 
                 <img className="img2 toggle2" src={url} alt=""/>
                 <img className="img3" src="https://image.flaticon.com/icons/png/512/1/1393.png" alt=""/>
-                <img onClick={addToCart} className="img-producto" src={url} alt="" />
+                <Link to={linkk}><img onClick={addToCart} className="img-producto" src={url} alt="" /></Link>
+                
                
                 <div className="nombre-precio">
                     <h1>{nombre}</h1>

@@ -1,6 +1,7 @@
 import logo from "../assets/logo.png";
 import './NavigationBar.css';
 import CartWidget from "./CartWidget";
+import {Link} from "react-router-dom";
 
 
 
@@ -23,15 +24,15 @@ function NavigationBar () {
         </div>
       </div>
       <div  className="med">
-        <span className="logo">
+        <Link to="/" className="logo">
           <img src={logo} id="logo" alt=""/>
-        </span>
+        </Link>
         <ul className="linked">
-              <li><a href="" >Hombre</a></li>
-              <li><a href="">Mujer</a></li>
-              <li><a href="">Niño</a></li>
-              <li><a href="">Surf</a></li>
-              <li><a href="">Contacto</a></li>
+              <li><Link to="/category/hombre">Hombre</Link></li>
+              <li><Link to="/category/mujer">Mujer</Link></li>
+              <li><Link to="/category/niño">Niño</Link></li>
+              <li><Link to="/category/surf">Surf</Link></li>
+              <li><Link to="/category/contacto">Contacto</Link></li>
             </ul>
          
       </div>
