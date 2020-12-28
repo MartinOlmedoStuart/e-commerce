@@ -1,3 +1,11 @@
+#Bienvenidos a mi e-commerce
+
+Para este proyecto me base en una pagina de Nueva Zelandia de ropa de estilo surf que me gusto mucho, al no tener tanta idea de estilos, los copie solamente con la intencion de que quede bien la pagina esteticamente; lo funcional ya depende de mi.
+
+La verdad que trate de cumplir lo mas posible con lo que planteaban los desafios, no utilice niguna libreria externa, salvo alguna para las images o iconos.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
