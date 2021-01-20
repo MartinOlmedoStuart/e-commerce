@@ -1,19 +1,36 @@
 import NavigationBar from "./components/NavigationBar";
 import Container from "./containers/Container";
 import Footer from "./components/Footer";
-import StarWars from "./components/StarWars";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import {BrowserRouter, Switch, Route} from "react-router-dom"
-import ItemDetail from "./components/Items/ItemDetail";
 import Error404 from "./components/Eror404";
 import Category from "./components/Category";
-
+import CarroWindow from "./components/CarroWindow";
+import {Store} from "./store/index";
+import {useState, useEffect} from "react";
+import CarroWidget from "./components/CarroWidget";
+import {Carro} from "./carro/index"
 
 function App() {
 
+  const [abierto, setAbierto] = useState(false);
+
+  const [data, setData]= useState({
+    cantidad:0,
+    items:[]
+  });
+
+  useEffect(() => {
+    console.log(data)
+},[data]);
+
   return (
-    <BrowserRouter>
-    <NavigationBar />
+    <Store.Provider value={[data,setData]}>
+    <Carro.Provider value={[abierto, setAbierto]}>
+
+       <BrowserRouter>
+        <NavigationBar />
+        <CarroWidget />
     <Switch>
       <Route exact path="/">
         <Container />
@@ -27,6 +44,10 @@ function App() {
         <ItemDetailContainer />
       </Route>
 
+      <Route path="/carro">
+        <CarroWindow />
+      </Route>
+
       <Route path="*">
         <Error404 />
       </Route>
@@ -34,11 +55,9 @@ function App() {
     </Switch>
     <Footer />
     </BrowserRouter>
-    // {/* < NavigationBar/>
-    // < StarWars />
-    // < ItemDetailContainer />
-    // <Container/> */}
-    // {/* <Footer /> */}
+
+    </Carro.Provider>
+    </Store.Provider>
     
   )
 };

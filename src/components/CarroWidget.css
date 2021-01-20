@@ -4,11 +4,11 @@
     position: absolute;
     top: 0;
     right: -500px;
-    min-height: 100vh;
     width: 500px;
     background-color:white;
     transition: transform 0.3s ease;
     z-index: 10000;
+    height: 100vh;
 }
 
 .toggle{
@@ -106,6 +106,13 @@ form button{
 
 .preview{
     display: flex;
+    margin-bottom: 10px;
+}
+
+#trash{
+    height: 20px;
+    position: absolute;
+    right: 20px;
 }
 
 .preview h3{
@@ -151,14 +158,13 @@ form button{
     transform: rotate(90deg) translateY(10px);
 }
 
-.contador-items span{
+.spanstyle{
     font-size: 18px;
     color: rgb(128, 128, 128);
     margin:10px 0px;
 }
 
 .contador-items{
-    padding-left: 5px;
     margin-top: 10px;
     border: 1px solid rgb(128, 128, 128);
     display: flex;
@@ -170,4 +176,17 @@ form button{
 
 #refresh{
     height: 20px;
+}
+
+.hide{
+    height: 0px;
+}
+
+.wrapp{
+    display: flex;
+    justify-content: space-around
+};
+
+.ups{
+    margin-left: 30px;
 }
