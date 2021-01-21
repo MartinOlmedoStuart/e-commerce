@@ -5,7 +5,6 @@ import {useState, useContext, useEffect} from "react";
 import {Carro} from "../../carro"
 
 
-
 function ItemDetail({item}){
 
 
@@ -33,7 +32,7 @@ let copia = data;
     
 
       const handelClickCarro = () => {
-
+        setBandera(true);
     const itemIsInCart = data.items.some(obj => obj.id == item.id)
      setAbierto(true);
     if(itemIsInCart){

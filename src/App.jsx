@@ -9,7 +9,8 @@ import CarroWindow from "./components/CarroWindow";
 import {Store} from "./store/index";
 import {useState, useEffect} from "react";
 import CarroWidget from "./components/CarroWidget";
-import {Carro} from "./carro/index"
+import {Carro} from "./carro/index";
+import CheckOut from "./Checkout";
 
 function App() {
 
@@ -35,7 +36,11 @@ function App() {
       <Route exact path="/">
         <Container />
       </Route>
-   
+
+      <Route exact path="/checkout">
+      <CheckOut />
+      </Route>
+
       <Route path="/category/:name?">
       <Category />
       </Route>
