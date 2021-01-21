@@ -6,7 +6,12 @@ function ItemCount({cantidad,id}){
 
    const [band, setBand] = useState(true);
    const [data, setData] = useContext(Store);
-   const [cant, setCant] = useState(cantidad);
+   const [cant, setCant] = useState(0);
+   useEffect(() => {
+    setCant(cantidad)
+},[cantidad]);
+   
+
    let copia = data;
     let index=0;
     for (let i =0; i< data.items.length; i++){
@@ -26,13 +31,13 @@ function ItemCount({cantidad,id}){
             copia.items[i].data.cantidad=copia.items[i].data.cantidad -1;
             copia.cantidad=copia.cantidad-1;
             setData(copia)
+            setCant(cant-1)
             let index=i;
         }
     }
     setTimeout(()=>{
     setBand(true);
     },2000)
-    setCant(cantidad-1)
 
 };
 
