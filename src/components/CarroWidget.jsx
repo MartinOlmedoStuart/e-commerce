@@ -36,7 +36,7 @@ function CarroWidget(){
             </div>
 
             {data.items.map(item => (
-                    <CartItem id={item.id} url={item.data.url} nombre={item.data.nombre} precio={item.data.precio} stock={5} />
+                    <CartItem id={item.id} url={item.data.url} nombre={item.data.nombre} precio={item.data.precio} stock={5} cantidad={item.data.cantidad}/>
                     ))}
 
            

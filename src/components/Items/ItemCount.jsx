@@ -1,53 +1,60 @@
-import {useState , useContext} from "react";
+import {useState , useContext, useEffect} from "react";
 import "./ItemCount.css";
 import {Store} from "../../store";
 
-function ItemCount(){
+function ItemCount({cantidad,id}){
 
    const [band, setBand] = useState(true);
    const [data, setData] = useContext(Store);
+   const [cant, setCant] = useState(cantidad);
+   let copia = data;
+    let index=0;
+    for (let i =0; i< data.items.length; i++){
+        if(data.items[i].id==id){
+            let index=i;
+        }
+    }
 
 //    setTimeout(()=>{
 //     setBand(true)
 //             },5000)
 
    function disminuirContador(){
-    // const consultarStock= new Promise((resolve, reject) => {
+    setBand(false);
+    for (let i =0; i< data.items.length; i++){
+        if(data.items[i].id==id){
+            copia.items[i].data.cantidad=copia.items[i].data.cantidad -1;
+            copia.cantidad=copia.cantidad-1;
+            setData(copia)
+            let index=i;
+        }
+    }
+    setTimeout(()=>{
+    setBand(true);
+    },2000)
+    setCant(cantidad-1)
 
-    //     setBand(false);
-    //     if(data.items[index].cantidad > 1){
-    //     setTimeout(()=>{
-    //         let copia = data;
-    //         copia.items[index].cantidad= copia.items[index].cantidad-1;
-    //         resolve( setData(copia))
-            
-    //         setBand(true);
-    //     },2000)}
-    //     else{
-    //         resolve ( setBand(true))
-    //     }
-        
-    // })
 };
 
     function aumentarContador(){
+        
     //     const consultarStock= new Promise((resolve, reject) => {
-
-
-    //         setBand(false);
-    //         setTimeout(()=>{
-    //             if(data.items[index].cantidad < stock){
-    //             let copia = data;
-    //             copia.items[index].cantidad= copia.items[index].cantidad+1;
-    //             resolve( setData(copia))
-    //             }
-    //             else{
-    //                 reject(alert("¡Uy! No tenemos más stock de este producto para agregarlo al carrito"))
-    //             }
-    //         setBand(true);
-    //         },2000)
+        for (let i =0; i< data.items.length; i++){
+            if(data.items[i].id==id){
+                copia.items[i].data.cantidad=copia.items[i].data.cantidad + 1;
+                copia.cantidad=copia.cantidad+1;
+                setData(copia)
+                let index=i;
+            }
+        }
+        console.log(cantidad)
+            setBand(false);
+            setTimeout(()=>{
+            setBand(true);
+            },2000)
     //     })
     //   console.log(data)
+    setCant(cantidad+1)
     };
 
     return(
@@ -59,8 +66,7 @@ function ItemCount(){
             </div>
            
             {
-            band ? <span className="spanstyle">{data.items[0].data.cantidad}</span> : <span className="spanstyle"><img id="refresh" src="https://cdn.lowgif.com/full/81ba4d9c4c799e48-.gif" alt=""/></span>
-            
+                band ? <span className="spanstyle">{cant}</span> : <span className="spanstyle"><img id="refresh" src="https://cdn.lowgif.com/full/81ba4d9c4c799e48-.gif" alt=""/></span>
             }
            
             <div className="espesor2" onClick={aumentarContador}>

@@ -14,23 +14,40 @@ const [data, setData] = useContext(Store);
 const [abierto, setAbierto] = useContext(Carro);
 
 let copia = data;
-
-    // function mapeo(){
+    let band= false; 
+    function mapeo(){
         
-    //     for (let i =0; i< data.items.length; i++){
-    //         if(data.items[i]===item.data.nombre){
-    //             copia.items[i].cantidad=copia.items[i].cantidad+1;
-    //             return true;
-    //         }
-    //     }
-    //     return false;
+        if(data.items.length>0){
+            for (let i =0; i< data.items.length; i++){
+                if(data.items[i].id==item.id){
+                    copia.items[i].cantidad=copia.items[i].cantidad+1;
+                    band=true;
+                    return true;
+                }
+            }
+            return false;
+            }
+            return false;
+        }
+      
     
 
       const handelClickCarro = () => {
 
+    const itemIsInCart = data.items.some(obj => obj.id == item.id)
      setAbierto(true);
-   
+    if(itemIsInCart){
+        for (let i =0; i< data.items.length; i++){
+            if(data.items[i].id==item.id){
+                copia.items[i].data.cantidad=copia.items[i].data.cantidad + 1;
+                copia.cantidad=copia.cantidad+1;
+                setData(copia)
+            }
+        }
+    }else{
         setData({...data, cantidad:data.cantidad+1, items:[...data.items, item]});
+    }
+        
      
      
     
